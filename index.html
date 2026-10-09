@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#101820" />
+<meta name="description" content="Mamoon Fares — Social Media Specialist and Performance Marketing professional focused on strategy, creative execution, and data-informed growth." />
+<title>Mamoon Fares — Digital Marketing Portfolio</title>
+<style>
+  /* Thmanyah Sans local font files */
+  @font-face {
+    font-family: "Thmanyah";
+    src: url("fonts/thmanyahsans-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Thmanyah";
+    src: url("fonts/thmanyahsans-Medium.woff2") format("woff2");
+    font-weight: 500 600;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Thmanyah";
+    src: url("fonts/thmanyahsans-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Thmanyah";
+    src: url("fonts/thmanyahsans-Black.woff2") format("woff2");
+    font-weight: 800 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  :root {
+    --ink: #101820;
+    --ink-2: #18252e;
+    --paper: #f4f2ed;
+    --white: #fffefa;
+    --muted: #aab5bb;
+    --muted-dark: #66737b;
+    --line: rgba(255,255,255,.13);
+    --line-light: rgba(16,24,32,.13);
+    --accent: #c5f36a;
+    --accent-dark: #9ecb40;
+    --radius: 22px;
+    --max: 1180px;
+    --font: "Thmanyah", "Segoe UI", Tahoma, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: var(--font); line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  button, input, textarea { font: inherit; }
+  button, a { -webkit-tap-highlight-color: transparent; }
+  ::selection { background: var(--accent); color: var(--ink); }
+  .container { width: min(var(--max), calc(100% - 48px)); margin-inline: auto; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: .77rem; font-weight: 700; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--muted-dark);
+  }
+  .eyebrow::before { content: ""; width: 24px; height: 2px; background: var(--accent-dark); }
+  .section { padding: 112px 0; }
+  .section-heading {
+    display: flex; align-items: end; justify-content: space-between;
+    gap: 32px; margin-bottom: 48px;
+  }
+  h1,h2,h3,p { margin-top: 0; }
+  h1,h2,h3 { letter-spacing: -.045em; line-height: 1.08; }
+  h2 { font-size: clamp(2.3rem, 5vw, 4.5rem); margin: 16px 0 0; max-width: 760px; }
+  .section-intro { color: var(--muted-dark); max-width: 420px; margin: 0; }
+  .nav-wrap { position: sticky; top: 0; z-index: 50; background: rgba(16,24,32,.93); backdrop-filter: blur(18px); border-bottom: 1px solid var(--line); }
+  .nav { height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; color: var(--white); }
+  .brand { display: inline-flex; align-items: center; gap: 11px; font-weight: 800; letter-spacing: -.03em; }
+  .brand-mark { display: grid; place-items: center; width: 34px; height: 34px; background: var(--accent); color: var(--ink); border-radius: 10px; font-weight: 900; }
+  .nav-links { display: flex; align-items: center; gap: 24px; font-size: .87rem; color: #d5dce0; }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-cta { padding: 10px 16px; border: 1px solid rgba(197,243,106,.6); border-radius: 999px; color: var(--accent); font-size: .85rem; }
+  .menu-toggle { display: none; background: none; border: 0; color: white; font-size: 1.5rem; cursor: pointer; }
+
+  .hero { position: relative; overflow: hidden; background: var(--ink); color: var(--white); padding: 92px 0 86px; }
+  .hero::before { content: ""; position: absolute; width: 620px; height: 620px; border-radius: 50%; right: -190px; top: -260px; border: 1px solid rgba(197,243,106,.18); box-shadow: 0 0 0 70px rgba(197,243,106,.025), 0 0 0 140px rgba(197,243,106,.02); pointer-events: none; }
+  .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; align-items: center; gap: 68px; position: relative; z-index: 1; }
+  .availability { display: inline-flex; align-items: center; gap: 9px; color: #d6e0e4; font-size: .82rem; margin-bottom: 26px; }
+  .availability span { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 5px rgba(197,243,106,.12); }
+  .hero h1 { font-size: clamp(3.7rem, 8vw, 7.1rem); max-width: 780px; margin: 0 0 22px; font-weight: 800; }
+  .hero h1 em { color: var(--accent); font-style: normal; }
+  .hero-role { font-size: clamp(1.05rem, 2vw, 1.4rem); color: #d0d9de; margin-bottom: 20px; }
+  .hero-copy { color: #aebbc2; max-width: 620px; font-size: 1.05rem; }
+  .hero-actions { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-top: 32px; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; border-radius: 999px; padding: 14px 21px; font-weight: 700; font-size: .92rem; transition: transform .2s ease, background .2s ease; }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-primary { background: var(--accent); color: var(--ink); }
+  .btn-primary:hover { background: #d5ff8a; }
+  .btn-outline { border: 1px solid rgba(255,255,255,.25); color: var(--white); }
+  .btn-outline:hover { background: rgba(255,255,255,.07); }
+  .hero-aside { border: 1px solid rgba(255,255,255,.15); border-radius: 28px; padding: 28px; background: linear-gradient(145deg, rgba(255,255,255,.07), rgba(255,255,255,.015)); position: relative; }
+  .hero-aside-top { display: flex; justify-content: space-between; align-items: center; color: #aebbc2; font-size: .76rem; text-transform: uppercase; letter-spacing: .1em; }
+  .hero-monogram { width: 100%; aspect-ratio: 1.08; margin: 25px 0; display: grid; place-items: center; background: radial-gradient(circle at 30% 20%, #2c3a42, #18252e 62%, #111a20); border-radius: 20px; overflow: hidden; position: relative; }
+  .hero-monogram::after { content: ""; position: absolute; width: 250px; height: 250px; border: 1px solid rgba(197,243,106,.4); border-radius: 50%; box-shadow: 0 0 0 30px rgba(197,243,106,.04), 0 0 0 60px rgba(197,243,106,.03); }
+  .hero-monogram strong { position: relative; z-index: 1; font-size: clamp(5rem, 10vw, 8rem); letter-spacing: -.12em; color: var(--accent); }
+  .hero-aside-bottom { display: flex; justify-content: space-between; gap: 16px; align-items: end; }
+  .hero-aside-bottom strong { display: block; font-size: 1.1rem; }
+  .hero-aside-bottom span { color: #aebbc2; font-size: .82rem; }
+  .hero-index { color: var(--accent); font-size: .8rem; }
+  .trust-strip { background: #19252d; color: #d0d9de; border-top: 1px solid var(--line); }
+  .trust-inner { min-height: 84px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+  .trust-label { color: #85939a; font-size: .77rem; text-transform: uppercase; letter-spacing: .1em; }
+  .trust-item { font-weight: 600; font-size: .9rem; }
+
+  .about-grid { display: grid; grid-template-columns: .75fr 1.25fr; gap: 90px; }
+  .about-sticky { align-self: start; position: sticky; top: 120px; }
+  .about-sticky h2 { font-size: clamp(2.4rem, 4vw, 4rem); }
+  .about-copy { font-size: 1.1rem; color: #4f5b62; }
+  .about-copy p { margin-bottom: 20px; }
+  .pullquote { margin: 34px 0; padding: 24px 28px; border-left: 3px solid var(--accent-dark); background: #e9e8df; border-radius: 0 16px 16px 0; color: var(--ink); font-size: 1.18rem; font-weight: 700; }
+  .principles { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin-top: 36px; }
+  .principle { padding: 22px; border: 1px solid var(--line-light); border-radius: 18px; }
+  .principle-num { color: #7c8b91; font-size: .75rem; }
+  .principle h3 { font-size: 1.25rem; margin: 14px 0 8px; }
+  .principle p { color: var(--muted-dark); font-size: .88rem; margin: 0; }
+
+  .experience { background: var(--ink); color: var(--white); }
+  .experience .eyebrow { color: #aebbc2; }
+  .experience .section-intro { color: #aebbc2; }
+  .timeline { display: grid; gap: 0; }
+  .job { display: grid; grid-template-columns: 210px 1fr; gap: 46px; padding: 38px 0; border-top: 1px solid var(--line); }
+  .job:last-child { border-bottom: 1px solid var(--line); }
+  .job-meta { color: #9cabb2; font-size: .86rem; }
+  .job-meta .date { color: var(--accent); display: block; margin-bottom: 8px; font-weight: 700; }
+  .job h3 { font-size: clamp(1.5rem, 2.5vw, 2.15rem); margin: 0 0 7px; }
+  .job-company { color: #c3cdd2; margin-bottom: 18px; }
+  .job ul { padding-left: 20px; margin: 0; color: #aebbc2; display: grid; gap: 9px; }
+  .job li::marker { color: var(--accent); }
+  .job-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 20px; }
+  .tag { border: 1px solid rgba(255,255,255,.16); border-radius: 999px; padding: 5px 10px; font-size: .76rem; color: #d2dce0; }
+
+  .skills-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 18px; }
+  .skill-card { background: var(--white); border: 1px solid var(--line-light); border-radius: var(--radius); padding: 30px; transition: transform .25s, box-shadow .25s; }
+  .skill-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(16,24,32,.07); }
+  .skill-top { display: flex; justify-content: space-between; align-items: start; gap: 16px; }
+  .skill-icon { display: grid; place-items: center; width: 46px; height: 46px; border-radius: 14px; background: #eaf2d9; color: var(--ink); font-size: 1.15rem; font-weight: 800; }
+  .skill-card .number { color: #8b969b; font-size: .78rem; }
+  .skill-card h3 { font-size: 1.55rem; margin: 22px 0 10px; }
+  .skill-card p { color: var(--muted-dark); font-size: .94rem; }
+  .chips { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 18px; }
+  .chip { background: #f0f0eb; border: 1px solid #e4e4dc; border-radius: 9px; padding: 7px 10px; font-size: .8rem; color: #39464d; }
+  .markets { margin-top: 44px; padding: 30px; border-radius: var(--radius); background: var(--ink); color: var(--white); display: grid; grid-template-columns: .55fr 1.45fr; gap: 35px; align-items: center; }
+  .markets h3 { margin: 0; font-size: 1.8rem; }
+  .markets p { color: #aebbc2; font-size: .9rem; margin: 8px 0 0; }
+  .market-list { display: flex; flex-wrap: wrap; gap: 9px; }
+  .market-pill { border: 1px solid rgba(255,255,255,.17); border-radius: 999px; padding: 7px 12px; font-size: .82rem; color: #e1e7ea; }
+
+  .projects { background: #e9e8e1; }
+  .project-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; }
+  .project-card { border-radius: var(--radius); overflow: hidden; background: var(--white); border: 1px solid rgba(16,24,32,.1); }
+  .project-visual { min-height: 245px; padding: 26px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; background: var(--ink); color: white; }
+  .project-visual::before { content: ""; position: absolute; width: 260px; height: 260px; border-radius: 50%; border: 1px solid rgba(197,243,106,.35); right: -45px; bottom: -125px; box-shadow: 0 0 0 32px rgba(197,243,106,.035), 0 0 0 65px rgba(197,243,106,.025); }
+  .project-visual::after { content: ""; position: absolute; inset: 0; background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,.035)); pointer-events: none; }
+  .project-type { position: relative; z-index: 1; font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); }
+  .project-title-graphic { position: relative; z-index: 1; font-size: clamp(2rem, 4vw, 3.2rem); max-width: 370px; line-height: 1; font-weight: 800; letter-spacing: -.06em; }
+  .project-visual .project-count { position: relative; z-index: 1; align-self: end; font-size: .8rem; color: #c3cdd2; }
+  .project-body { padding: 25px; }
+  .project-body h3 { font-size: 1.45rem; margin-bottom: 10px; }
+  .project-body p { color: var(--muted-dark); font-size: .94rem; margin-bottom: 18px; }
+  .project-meta { display: flex; gap: 8px; flex-wrap: wrap; }
+  .project-meta span { font-size: .75rem; background: #f0f0eb; padding: 5px 9px; border-radius: 7px; }
+  .case-note { margin-top: 24px; padding: 17px 20px; background: rgba(16,24,32,.055); border-radius: 12px; color: #59666c; font-size: .86rem; }
+
+  .academic-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 70px; }
+  .education-card { padding: 28px; background: var(--white); border: 1px solid var(--line-light); border-radius: var(--radius); margin-bottom: 14px; }
+  .education-card .level { color: #718087; font-size: .78rem; text-transform: uppercase; letter-spacing: .1em; }
+  .education-card h3 { font-size: 1.5rem; margin: 12px 0 7px; }
+  .education-card p { color: var(--muted-dark); margin: 0; }
+  .vision-card { background: var(--ink); color: var(--white); border-radius: var(--radius); padding: 36px; height: 100%; }
+  .vision-card h3 { font-size: 2rem; margin: 16px 0; }
+  .vision-card p { color: #b3c0c6; }
+  .research-list { display: grid; gap: 0; margin-top: 28px; }
+  .research-item { display: flex; justify-content: space-between; gap: 15px; padding: 14px 0; border-top: 1px solid var(--line); color: #e0e6e9; font-size: .9rem; }
+  .research-item span:last-child { color: var(--accent); }
+
+  .contact { background: var(--accent); }
+  .contact .eyebrow { color: #4d6031; }
+  .contact-grid { display: grid; grid-template-columns: 1fr .8fr; gap: 60px; align-items: end; }
+  .contact h2 { font-size: clamp(3rem, 7vw, 6.6rem); max-width: 760px; }
+  .contact-copy { font-size: 1.05rem; max-width: 560px; color: #3f4d2a; margin-top: 24px; }
+  .contact-links { display: grid; gap: 10px; }
+  .contact-link { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 17px 0; border-bottom: 1px solid rgba(16,24,32,.22); font-weight: 700; }
+  .contact-link span:last-child { font-size: 1.2rem; }
+  .footer { background: var(--ink); color: #aebbc2; padding: 25px 0; font-size: .82rem; }
+  .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .footer strong { color: white; }
+
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .top-button { position: fixed; right: 22px; bottom: 22px; z-index: 20; border: 0; border-radius: 50%; width: 44px; height: 44px; background: var(--ink); color: var(--accent); font-size: 1.2rem; cursor: pointer; box-shadow: 0 8px 22px rgba(0,0,0,.15); opacity: 0; pointer-events: none; transition: opacity .2s; }
+  .top-button.show { opacity: 1; pointer-events: auto; }
+
+  @media (max-width: 900px) {
+    .nav-links { gap: 14px; }
+    .hero-grid { grid-template-columns: 1fr .7fr; gap: 32px; }
+    .about-grid, .academic-grid { gap: 38px; }
+    .markets { grid-template-columns: 1fr; gap: 22px; }
+    .job { grid-template-columns: 155px 1fr; gap: 26px; }
+  }
+  @media (max-width: 700px) {
+    .container { width: min(100% - 32px, var(--max)); }
+    .section { padding: 76px 0; }
+    .nav { height: 66px; }
+    .menu-toggle { display: block; }
+    .nav-links { display: none; position: absolute; top: 66px; left: 0; right: 0; background: var(--ink); padding: 18px 24px 24px; border-bottom: 1px solid var(--line); flex-direction: column; align-items: stretch; gap: 0; }
+    .nav-links.open { display: flex; }
+    .nav-links a { padding: 12px 0; }
+    .nav-cta { text-align: center; margin-top: 8px; }
+    .hero { padding: 66px 0 60px; }
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: clamp(3.6rem, 17vw, 5.8rem); }
+    .hero-aside { max-width: 430px; }
+    .hero-monogram { aspect-ratio: 1.35; }
+    .trust-inner { padding: 18px 0; justify-content: flex-start; gap: 12px 22px; }
+    .trust-label { width: 100%; }
+    .section-heading { display: block; margin-bottom: 34px; }
+    .section-intro { margin-top: 18px; }
+    .about-grid, .academic-grid, .contact-grid { grid-template-columns: 1fr; gap: 30px; }
+    .about-sticky { position: static; }
+    .principles { grid-template-columns: 1fr; }
+    .job { grid-template-columns: 1fr; gap: 12px; padding: 30px 0; }
+    .skills-grid, .project-grid { grid-template-columns: 1fr; }
+    .skill-card { padding: 24px; }
+    .project-visual { min-height: 220px; }
+    .contact-grid { gap: 32px; }
+    .contact h2 { font-size: clamp(3rem, 15vw, 5rem); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    .reveal { opacity: 1; transform: none; }
+  }
+</style>
+</head>
+<body>
+<header class="nav-wrap">
+  <nav class="nav container" aria-label="Main navigation">
+    <a class="brand" href="#home" aria-label="Mamoon Fares home"><span class="brand-mark">M.</span><span>MAMOON FARES</span></a>
+    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" id="menuToggle">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a><a href="#experience">Experience</a><a href="#skills">Expertise</a><a href="#projects">Projects</a><a href="#academic">Academic</a>
+      <a href="assets/Mamoon_Fares_CV.pdf" download="Mamoon_Fares_CV.pdf">Download CV ↓</a><a class="nav-cta" href="#contact">Let's Talk ↗</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div class="reveal">
+        <div class="availability"><span></span> Based in Jordan · Open to opportunities</div>
+        <h1>Strategy.<br>Creativity.<br><em>Performance.</em></h1>
+        <p class="hero-role">Social Media Specialist <span style="color:var(--accent)">/</span> Performance Marketing</p>
+        <p class="hero-copy">I combine paid media, content strategy, and data-informed decision-making to help brands communicate effectively, reach the right audiences, and pursue meaningful marketing outcomes.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projects">Explore my work <span>↘</span></a>
+          <a class="btn btn-outline" href="assets/Mamoon_Fares_CV.pdf" download="Mamoon_Fares_CV.pdf">Download CV <span>↓</span></a>
+        </div>
+      </div>
+      <aside class="hero-aside reveal" aria-label="Personal brand card">
+        <div class="hero-aside-top"><span>Digital marketing portfolio</span><span>2026</span></div>
+        <div class="hero-monogram"><strong>MF.</strong></div>
+        <div class="hero-aside-bottom">
+          <div><strong>Mamoon Fares</strong><span>Marketer · Creator · Research-minded</span></div>
+          <span class="hero-index">01 / 07</span>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <div class="trust-strip">
+    <div class="container trust-inner">
+      <span class="trust-label">Experience across</span>
+      <span class="trust-item">Paid Media</span><span class="trust-item">Content Strategy</span><span class="trust-item">Video Production</span><span class="trust-item">Data & Analytics</span><span class="trust-item">Academic Research</span>
+    </div>
+  </div>
+
+  <section class="section" id="about">
+    <div class="container about-grid">
+      <div class="about-sticky reveal">
+        <span class="eyebrow">01 / About me</span>
+        <h2>A marketer with a strategic mindset.</h2>
+      </div>
+      <div class="about-copy reveal">
+        <p>I am a Digital Marketing graduate from The Hashemite University and a Master's student in Digital Marketing at Applied Science Private University, Jordan.</p>
+        <p>My professional experience brings together social media management, paid advertising, content planning, and commercial video production. I enjoy turning business objectives into clear digital strategies, then translating those strategies into content and campaigns designed for specific audiences.</p>
+        <p>I believe effective marketing goes beyond publishing content or generating engagement. It requires clear objectives, meaningful KPIs, an understanding of consumer behavior, and a willingness to learn from campaign performance.</p>
+        <p>Alongside my practical work, I am passionate about marketing research and the academic foundations of consumer decision-making. I aim to connect evidence-based insights with the realities of day-to-day marketing practice.</p>
+        <div class="pullquote">“Creative ideas attract attention. Strategic execution creates value. Data helps us understand the difference.”</div>
+        <div class="principles">
+          <article class="principle"><span class="principle-num">01 — THINK</span><h3>Strategy</h3><p>Clear objectives, audience insight, and purposeful execution.</p></article>
+          <article class="principle"><span class="principle-num">02 — DO</span><h3>Performance</h3><p>Measurement, testing, and continuous improvement.</p></article>
+          <article class="principle"><span class="principle-num">03 — LEARN</span><h3>Research</h3><p>Critical thinking and evidence-informed decisions.</p></article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section experience" id="experience">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div><span class="eyebrow">02 / Career journey</span><h2>Professional experience.</h2></div>
+        <p class="section-intro">Practical experience across brand communication, paid media, content development, and campaign reporting.</p>
+      </div>
+      <div class="timeline">
+        <article class="job reveal">
+          <div class="job-meta"><span class="date">AUG 2026 — PRESENT</span>Jordan</div>
+          <div>
+            <h3>Social Media Specialist</h3><div class="job-company">Future Pack Group</div>
+            <ul>
+              <li>Manage paid advertising campaigns, aligning objectives, audience targeting, creative assets, and optimization decisions.</li>
+              <li>Develop monthly social media content plans that support brand positioning, campaign objectives, and audience engagement.</li>
+              <li>Support digital campaigns associated with major initiatives, including Damascus International Fair, United Nations procurement conferences, and Military Consumer Corporation branches.</li>
+              <li>Adapt campaign messaging and creative direction to different audience segments and market requirements.</li>
+              <li>Monitor available performance metrics and use insights to inform reporting and campaign improvements.</li>
+            </ul>
+            <div class="job-tags"><span class="tag">Meta Ads</span><span class="tag">Content Planning</span><span class="tag">Campaign Management</span><span class="tag">Creative Strategy</span></div>
+          </div>
+        </article>
+        <article class="job reveal">
+          <div class="job-meta"><span class="date">SEP 2025 — JUL 2026</span>Jordan</div>
+          <div>
+            <h3>Social Media Officer</h3><div class="job-company">YAN Industrial and Trading Co.</div>
+            <ul>
+              <li>Managed social media activities and supported digital marketing initiatives across a diverse consumer-brand portfolio.</li>
+              <li>Planned product-focused content and promotional messaging tailored to brand objectives and target audiences.</li>
+              <li>Managed paid social campaigns and monitored metrics such as reach, impressions, frequency, CPM, CTR, CPC, and cost per result where applicable.</li>
+              <li>Built a structured advertising tracker to improve campaign reporting and performance visibility.</li>
+              <li>Reviewed creative assets, audience targeting, and placements to identify opportunities for improvement.</li>
+            </ul>
+            <div class="job-tags"><span class="tag">Paid Social</span><span class="tag">KPI Tracking</span><span class="tag">Reporting</span><span class="tag">Brand Management</span></div>
+          </div>
+        </article>
+        <article class="job reveal">
+          <div class="job-meta"><span class="date">FEB 2025 — JUN 2025</span>Jordan</div>
+          <div>
+            <h3>Marketing Intern</h3><div class="job-company">ATICO Fakhreldin Group</div>
+            <ul>
+              <li>Supported digital marketing activities, content preparation, and social media initiatives.</li>
+              <li>Gained practical exposure to brand communication, audience engagement, and marketing operations.</li>
+              <li>Strengthened collaboration, task coordination, and the ability to contribute within a structured marketing team.</li>
+            </ul>
+            <div class="job-tags"><span class="tag">Marketing Operations</span><span class="tag">Content Support</span><span class="tag">Brand Communication</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div><span class="eyebrow">03 / What I do</span><h2>Core competencies.</h2></div>
+        <p class="section-intro">A practical toolkit for planning, producing, activating, and evaluating digital marketing work.</p>
+      </div>
+      <div class="skills-grid">
+        <article class="skill-card reveal">
+          <div class="skill-top"><span class="skill-icon">↗</span><span class="number">01 / MEDIA</span></div>
+          <h3>Paid Media & Performance</h3><p>Campaign setup and management focused on objectives, audiences, creative testing, and ongoing optimization.</p>
+          <div class="chips"><span class="chip">Meta Ads Manager</span><span class="chip">Google Ads</span><span class="chip">Audience Targeting</span><span class="chip">Budget Management</span><span class="chip">A/B Testing</span><span class="chip">Campaign Optimization</span></div>
+        </article>
+        <article class="skill-card reveal">
+          <div class="skill-top"><span class="skill-icon">✳</span><span class="number">02 / CONTENT</span></div>
+          <h3>Social Media & Content</h3><p>Content planning and marketing communication designed around brand positioning and audience needs.</p>
+          <div class="chips"><span class="chip">Monthly Content Plans</span><span class="chip">Copywriting</span><span class="chip">Content Calendars</span><span class="chip">Campaign Messaging</span><span class="chip">Brand Communication</span></div>
+        </article>
+        <article class="skill-card reveal">
+          <div class="skill-top"><span class="skill-icon">▶</span><span class="number">03 / PRODUCTION</span></div>
+          <h3>Video & Creative Production</h3><p>Short-form video, commercial edits, social-first storytelling, and creative adaptation for digital platforms.</p>
+          <div class="chips"><span class="chip">CapCut</span><span class="chip">Adobe Premiere Pro</span><span class="chip">DaVinci Resolve</span><span class="chip">Final Cut Pro</span><span class="chip">Canva Pro</span><span class="chip">Adobe Illustrator</span></div>
+        </article>
+        <article class="skill-card reveal">
+          <div class="skill-top"><span class="skill-icon">▥</span><span class="number">04 / ANALYTICS</span></div>
+          <h3>Data, Reporting & AI</h3><p>Structured campaign reporting, KPI interpretation, and AI-assisted workflows with human review.</p>
+          <div class="chips"><span class="chip">Microsoft Power BI</span><span class="chip">Excel</span><span class="chip">ChatGPT</span><span class="chip">Gemini</span><span class="chip">DeepSeek</span><span class="chip">Claude</span></div>
+        </article>
+      </div>
+      <div class="markets reveal">
+        <div><h3>Markets & audiences.</h3><p>Campaign targeting across regional and international markets, depending on campaign requirements.</p></div>
+        <div class="market-list">
+          <span class="market-pill">Jordan</span><span class="market-pill">Syria</span><span class="market-pill">Iraq</span><span class="market-pill">Lebanon</span><span class="market-pill">Kuwait</span><span class="market-pill">Oman</span><span class="market-pill">Saudi Arabia</span><span class="market-pill">Qatar</span><span class="market-pill">United Kingdom</span><span class="market-pill">Australia</span><span class="market-pill">South Africa</span>
+        </div>
+      </div>
+      <p style="color:var(--muted-dark);font-size:.83rem;margin-top:14px;">Performance indicators used where relevant: Reach, Impressions, Frequency, CPM, CTR, CPC, Conversions, CPA, and ROAS when reliable conversion and revenue tracking is available.</p>
+    </div>
+  </section>
+
+  <section class="section projects" id="projects">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div><span class="eyebrow">04 / Selected work</span><h2>Featured projects & campaigns.</h2></div>
+        <p class="section-intro">Selected campaign categories that demonstrate how strategy, creative execution, and paid media come together.</p>
+      </div>
+      <div class="project-grid">
+        <article class="project-card reveal">
+          <div class="project-visual"><span class="project-type">Event marketing</span><div class="project-title-graphic">Damascus<br>International Fair</div><span class="project-count">PROJECT 01 / 04</span></div>
+          <div class="project-body"><h3>Event Campaign & Content Strategy</h3><p>Digital campaign activities associated with a major exhibition, combining promotional messaging, content planning, and audience-focused advertising to support event visibility.</p><div class="project-meta"><span>Awareness</span><span>Event Promotion</span><span>Audience Targeting</span></div></div>
+        </article>
+        <article class="project-card reveal">
+          <div class="project-visual" style="background:#25343d;"><span class="project-type">B2B communication</span><div class="project-title-graphic">United Nations<br>Procurement</div><span class="project-count">PROJECT 02 / 04</span></div>
+          <div class="project-body"><h3>Professional Event Communication</h3><p>Supported communication activities related to procurement conferences, with an emphasis on professional messaging, relevant content, and audience-appropriate execution.</p><div class="project-meta"><span>Professional Audiences</span><span>Content Planning</span><span>Institutional Communication</span></div></div>
+        </article>
+        <article class="project-card reveal">
+          <div class="project-visual" style="background:#35432d;"><span class="project-type">Retail marketing</span><div class="project-title-graphic">Military Consumer<br>Corporation</div><span class="project-count">PROJECT 03 / 04</span></div>
+          <div class="project-body"><h3>Retail Promotions & Digital Advertising</h3><p>Promotional digital marketing activities associated with retail branches, aligning creative, advertising objectives, and audience targeting with the intended offer.</p><div class="project-meta"><span>Retail</span><span>Paid Media</span><span>Promotional Content</span></div></div>
+        </article>
+        <article class="project-card reveal">
+          <div class="project-visual" style="background:#403c34;"><span class="project-type">Product marketing</span><div class="project-title-graphic">Consumer Products<br>at YAN</div><span class="project-count">PROJECT 04 / 04</span></div>
+          <div class="project-body"><h3>Product Promotion & Paid Social</h3><p>Social media and advertising activities for consumer brands, combining product-focused content, promotional messaging, targeting, and campaign monitoring.</p><div class="project-meta"><span>Product Awareness</span><span>Creative Testing</span><span>KPI Tracking</span></div></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="academic">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div><span class="eyebrow">05 / Education & research</span><h2>Academic background & vision.</h2></div>
+        <p class="section-intro">Building a professional practice informed by academic study, critical thinking, and curiosity about consumer behavior.</p>
+      </div>
+      <div class="academic-grid">
+        <div class="reveal">
+          <article class="education-card"><span class="level">Postgraduate studies · Current</span><h3>Master's in Digital Marketing</h3><p>Applied Science Private University · Jordan</p><p style="margin-top:14px;">Developing a deeper understanding of digital marketing strategy, consumer behavior, digital communication, and analytical approaches to marketing decisions.</p></article>
+          <article class="education-card"><span class="level">Undergraduate degree</span><h3>Bachelor's in Digital Marketing</h3><p>The Hashemite University · Jordan</p><p style="margin-top:14px;">Built a foundation in digital marketing principles, marketing strategy, consumer behavior, social media, and digital communication.</p></article>
+        </div>
+        <div class="vision-card reveal">
+          <span class="eyebrow">Research interests</span>
+          <h3>Bridging marketing theory and real-world practice.</h3>
+          <p>I am interested in digital consumer behavior, social media influence, advertising effectiveness, and marketing analytics. My long-term ambition is to contribute to collaborative research and work toward publishing high-quality studies in reputable peer-reviewed journals indexed in Scopus.</p>
+          <p>For me, research is an opportunity to question assumptions, evaluate evidence, understand consumer decision-making, and develop more informed marketing strategies.</p>
+          <div class="research-list">
+            <div class="research-item"><span>Digital Consumer Behavior</span><span>↗</span></div>
+            <div class="research-item"><span>Social Media & Influencer Marketing</span><span>↗</span></div>
+            <div class="research-item"><span>Advertising Effectiveness</span><span>↗</span></div>
+            <div class="research-item"><span>Marketing Analytics</span><span>↗</span></div>
+            <div class="research-item"><span>Evidence-Based Marketing</span><span>↗</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact">
+    <div class="container contact-grid">
+      <div class="reveal">
+        <span class="eyebrow">06 / Let's connect</span>
+        <h2>Have a project in mind?</h2>
+        <p class="contact-copy">Let's turn your marketing goals into a clear strategy, compelling content, and measurable digital performance. I'm interested in connecting with marketing teams, agencies, and ambitious brands that value strategic thinking and continuous improvement.</p>
+        <a class="btn" style="background:var(--ink);color:var(--accent);margin-top:10px;" href="mailto:mamoonmustafa3@gmail.com">Start a conversation ↗</a>
+      </div>
+      <div class="contact-links reveal">
+        <a class="contact-link" href="mailto:mamoonmustafa3@gmail.com"><span>Email</span><span>↗</span></a>
+        <a class="contact-link" href="https://www.linkedin.com/in/ma-moon-m-fares-a72070274/" target="_blank" rel="noreferrer"><span>LinkedIn</span><span>↗</span></a>
+        <a class="contact-link" href="assets/Mamoon_Fares_CV.pdf" download="Mamoon_Fares_CV.pdf"><span>Download CV (PDF)</span><span>↓</span></a>
+        <p style="font-size:.85rem;color:#3f4d2a;margin-top:14px;">Based in Jordan · Open to regional and international opportunities.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <span>© <span id="year"></span> <strong>Mamoon Fares</strong>. All rights reserved.</span>
+    <span>Built around strategy, creativity & performance.</span>
+    <a href="#home">Back to top ↑</a>
+  </div>
+</footer>
+<button class="top-button" id="topButton" aria-label="Back to top">↑</button>
+
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  menuToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+    menuToggle.textContent = isOpen ? '×' : '☰';
+  });
+  navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.textContent = '☰';
+  }));
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const topButton = document.getElementById('topButton');
+  window.addEventListener('scroll', () => topButton.classList.toggle('show', window.scrollY > 500));
+  topButton.addEventListener('click', () => window.scrollTo({top: 0, behavior: 'smooth'}));
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
